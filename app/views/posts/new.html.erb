@@ -15,20 +15,18 @@
 </style>
 
 <body>
-  <div class="album py-5 bg-light">
-    <div class="container text-center">
-      <h2 class="m-3">投稿する</h2>
-      <%= form_with(model: @post, local: true) do |form| %>
-        <div class="col-m-3">
-          <%= form.text_field :title, placeholder: "title" %>
-        </div>
-        <div class="col-m-3">
-          <%= form.text_area :text, placeholder: "text", rows: "10" %>
-        </div>
-        <div class="col-m-3">
-          <%= form.submit "SEND" %>
-        </div>
-      <% end %>
-    </div>
+  <div class="container py-5 bg-light text-center">
+    <h2 class="m-3">投稿する</h2>
+    <%= form_with(model: @post, local: true) do |form| %>
+      <div class="col-m-3">
+        <%= form.text_field :title, placeholder: "title" %>
+      </div>
+      <div class="col-m-3">
+        <%= form.text_area :text, placeholder: "text", rows: "10" %>
+      </div>
+      <div class="col-m-3">
+        <%= form.submit "SEND" %>
+      </div>
+    <% end %>
   </div>
 </body>

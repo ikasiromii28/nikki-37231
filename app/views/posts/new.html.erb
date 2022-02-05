@@ -25,6 +25,12 @@
         <%= form.text_area :text, placeholder: "text", rows: "10" %>
       </div>
       <div class="col-m-3">
+        <p>
+          クリックしてファイルをアップロード
+        </p>
+        <%= form.file_field :image, id:"post-image" %>
+      </div>
+      <div class="col-m-3">
         <%= form.submit "SEND" %>
       </div>
     <% end %>

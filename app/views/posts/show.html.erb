@@ -1,0 +1,30 @@
+<style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+</style>
+
+<body>
+  <div class="container py-5 bg-light text-center">
+    <div class="m-3">
+      <p><%= @post.title %></p>
+    </div>
+    <div class="m-3">
+      <p><%= l @post.created_at %></p>
+    </div>
+    <div class="m-3">
+      <p><%= @post.text %></p>
+    </div>
+    <%= image_tag post.image.variant(resize: '500x500'), class: 'post-image' if post.image.attached?%>
+  </div>
+</body>

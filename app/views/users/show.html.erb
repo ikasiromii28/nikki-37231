@@ -1,9 +1,47 @@
-<div class="contents row">
-  <p><%= @nickname %>さんの投稿一覧</p>
-  <% @posts.each do |post| %>
-    <%# <div class="content_post" style="background-image: url(<%= post.image %>
-      <p><%= post.text %></p>
-      <span><%= post.title %></span>
+<style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+</style>
+
+<body>
+  <div class="album py-5 bg-light">
+    <div class="container">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <div class="text-center">
+          <p><%= @nickname %>さんの投稿一覧</p>
+        </div>
+      <% @posts.each do |post| %>
+        <div class="col">
+          <div class="card shadow-sm">
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+
+            <div class="card-body">
+              <p class="card-text"><%= post.title %></p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a><%= link_to(post_path(post.id), class:"btn btn-sm btn-outline-secondary") do %>View</a><% end %>
+                  <%# <a href="#" class="btn btn-outline-secondary" role="button">Link</a>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button> %>
+                </div>
+                <small class="text-muted"><a href="/users/<%= post.user.id %>"></small>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+      </div>
     </div>
-  <% end %>
-</div>
+  </div>
+</body>

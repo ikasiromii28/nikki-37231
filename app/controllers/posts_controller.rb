@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    @posts = Post.all
+    @posts = Post.includes(:user)
   end
 
   def new
@@ -25,6 +25,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :text, :image)
+    params.require(:post).permit(:title, :text, :image).merge(user_id: current_user.id)
   end
 end

@@ -26,8 +26,8 @@
                   <div class="user_nav grid-6">
                     <li><a href="#" class="text-white">Follow on Twitter</a></li>
                     <li><a href="#" class="text-white">Like on Facebook</a></li>
-                    <li><a href="#" class="text-white">Email me</a></li>
-                    <li><%= link_to "ログアウト", destroy_user_session_path, class: "text-white", method: :delete %>
+                    <li><%= link_to "マイページ", "/users/#{current_user.id}", class: "text-white" %></li>
+                    <li><%= link_to "ログアウト", destroy_user_session_path, class: "text-white", method: :delete %></li>
                   </div>
                 <% else %>
                   <div class="grid-6">

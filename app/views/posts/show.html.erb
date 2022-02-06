@@ -33,5 +33,8 @@
     <div class="m-3">
       <%= image_tag @post.image.variant(resize: '300x300'), class: 'post-image' if @post.image.attached?%>
     </div>
+    <div class="m-3">
+      <%= link_to(post_path(@post.id), method: :delete) do %>削除</a><% end %>
+    </div>
   </div>
 </body>

@@ -1,22 +1,6 @@
-<style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-</style>
-
 <body>
   <div class="container py-5 bg-light text-center">
-    <h2 class="m-3">投稿する</h2>
+    <h2 class="m-3">編集する</h2>
     <%#= render 'layouts/error_messages', model: form.object %>
     <%= form_with(model: @post, local: true) do |form| %>
       <div class="col-m-3">

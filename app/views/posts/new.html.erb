@@ -18,6 +18,9 @@
   <div class="container py-5 bg-light text-center">
     <h2 class="m-3">投稿する</h2>
     <%#= render 'layouts/error_messages', model: form.object %>
+    <% @post.errors.full_messages.each do |message| %>
+      <%= message %>
+    <% end %>
     <%= form_with(model: @post, local: true) do |form| %>
       <div class="col-m-3">
         <%= form.text_field :title, placeholder: "title" %>

@@ -1,7 +1,6 @@
 <body>
   <div class="container py-5 bg-light text-center">
     <h2 class="m-3">編集する</h2>
-    <%#= render 'layouts/error_messages', model: form.object %>
     <%= form_with(model: @post, local: true) do |form| %>
       <div class="col-m-3">
         <%= form.text_field :title, placeholder: "title" %>

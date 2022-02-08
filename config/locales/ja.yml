@@ -12,9 +12,6 @@ ja:
     attributes:
       user:
         nickname: ニックネーム
-      tweet:
-        text: テキスト
-        image: 画像
       room:
         user: ユーザー名
         name: ルーム名
@@ -25,3 +22,7 @@ ja:
       post:
         date: 日付
         post: 投稿
+        title: タイトル
+        text: 本文
+        user: ユーザー名
+        image: 画像

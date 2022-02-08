@@ -26,3 +26,5 @@ ja:
         text: 本文
         user: ユーザー名
         image: 画像
+        mood_id: 気分
+        weather_id: 天気

@@ -23,6 +23,10 @@
       <p><%= @post.created_at.strftime("%Y年%m月%d日%H時%M分") %></p>
     </div>
     <div class="m-3">
+      <p>今日の気分 * <%= @post.mood.name %></p>
+      <p>今日の天気 * <%= @post.weather.name %></p>
+    </div>
+    <div class="m-3">
       <p><%= @post.text %></p>
     </div>
     <span class="m-3">

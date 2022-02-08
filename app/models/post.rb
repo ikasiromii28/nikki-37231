@@ -8,8 +8,8 @@ class Post < ApplicationRecord
     validates :image
   end
 
-  validates :mood_id, numericality: { other_than: 1, message: "選択してください" }
-  validates :weather_id, numericality: { other_than: 1, message: "選択してください" }
+  validates :mood_id, numericality: { other_than: 1, message: "を選択してください" }
+  validates :weather_id, numericality: { other_than: 1, message: "を選択してください" }
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :mood

@@ -16,32 +16,37 @@
 
 <body>
   <div class="container py-5 bg-light text-center">
-    <div class="m-3">
-      <p><%= @post.title %></p>
-    </div>
-    <div class="m-3">
-      <p><%= @post.created_at.strftime("%Y年%m月%d日%H時%M分") %></p>
-    </div>
-    <div class="m-3">
-      <p>今日の気分 * <%= @post.mood.name %></p>
-      <p>今日の天気 * <%= @post.weather.name %></p>
-    </div>
-    <div class="m-3">
-      <p><%= @post.text %></p>
-    </div>
-    <span class="m-3">
-      <a href="/users/<%= @post.user.id %>">
-        <span>投稿者</span><%= @post.user.nickname %>
-      </a>
-    </span>
-    <div class="m-3">
-      <%= image_tag @post.image.variant(resize: '300x300'), class: 'post-image' if @post.image.attached?%>
-    </div>
-    <% if user_signed_in? && current_user.id == @post.user_id %>
-      <div class="m-3">
-        <a><%= link_to(edit_post_path(@post.id), method: :get) do %>編集</a><% end %>
-        <a><%= link_to(post_path(@post.id), method: :delete) do %>削除</a><% end %>
+    <div class="m-3 border">
+      <div class="m-3 border">
+        <p><%= @post.title %></p>
       </div>
-    <% end %>
+      <div class="m-3 border">
+        <p><%= @post.created_at.strftime("%Y年%m月%d日%H時%M分") %></p>
+      </div>
+      <div class="m-3 border">
+        <p>今日の気分 * <%= @post.mood.name %></p>
+        <p>今日の天気 * <%= @post.weather.name %></p>
+      </div>
+      <div class="m-3 border">
+        <p><%= @post.text %></p>
+      </div>
+      <span class="m-3">
+        <a href="/users/<%= @post.user.id %>">
+          <span>投稿者</span><%= @post.user.nickname %>
+        </a>
+      </span>
+      <div class="m-3">
+        <%= image_tag @post.image.variant(resize: '300x300'), class: 'post-image' if @post.image.attached?%>
+      </div>
+      <div class="m-3">
+        <a><%= link_to(post_path(@post.id), class:"btn btn-sm btn-outline-secondary") do %>コメントする</a><% end %>
+        <% if user_signed_in? && current_user.id == @post.user_id %>
+          <div class="m-3">
+            <a><%= link_to(edit_post_path(@post.id), method: :get, class:"btn btn-sm btn-outline-secondary") do %>編集</a><% end %>
+            <a><%= link_to(post_path(@post.id), method: :delete, class:"btn btn-sm btn-outline-secondary") do %>削除</a><% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
 </body>

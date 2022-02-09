@@ -30,22 +30,22 @@ RSpec.describe Post, type: :model do
       it 'weather_idが空では投稿できない' do
         @post.weather = nil
         @post.valid?
-        expect(@post.errors.full_messages).to include("天気を選択してください")
+        expect(@post.errors.full_messages).to include('天気を選択してください')
       end
       it 'weather_idが「天気」では投稿できない' do
         @post.weather_id = 1
         @post.valid?
-        expect(@post.errors.full_messages).to include("天気を選択してください")
+        expect(@post.errors.full_messages).to include('天気を選択してください')
       end
       it 'mood_idが空では登録できない' do
         @post.mood = nil
         @post.valid?
-        expect(@post.errors.full_messages).to include("気分を選択してください")
+        expect(@post.errors.full_messages).to include('気分を選択してください')
       end
       it 'mood_idが「気分」では登録できない' do
         @post.mood_id = 1
         @post.valid?
-        expect(@post.errors.full_messages).to include("気分を選択してください")
+        expect(@post.errors.full_messages).to include('気分を選択してください')
       end
       it 'ユーザーが紐付いていなければ投稿できない' do
         @post.user = nil

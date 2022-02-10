@@ -21,6 +21,16 @@
         <p><%= @nickname %>さんのマイページ</p>
       </div>
       <div class="text-center">
+        <div class="info">
+          <p>
+            <%#= link_to "フォロー：#{@user.followings.count}人", followeds_user_path %>
+          </p>
+          <p>
+            <%#= link_to "フォロワー：#{@user.followeds.count}人", followings_user_path %>
+          </p>
+        </div>
+      </div>
+      <div class="text-center">
         <p>
           投稿数：<%= @posts.count %>
         </p>

@@ -1,26 +1,41 @@
 <%#= render 'layouts/error_messages', model: form.object %>
-<% post.errors.full_messages.each do |message| %>
-  <%= message %>
-<% end %>
-<%= form_with(model: post, local: true) do |form| %>
-  <div class="col-m-3">
-    <%= form.text_field :title, placeholder: "title" %>
-  </div>
-  <div class="col-m-3">
-    <%= form.collection_select(:mood_id, Mood.all, :id, :name, {}, {class:"mood-select"}) %>
-    <%= form.collection_select(:weather_id, Weather.all, :id, :name, {}, {class:"weather-select"}) %>
-  </div>
-  <div class="col-m-3">
-    <%= form.text_area :text, placeholder: "text", rows: "10" %>
-    <p><span id="text-length">0</span>文字</p>
-  </div>
-  <div class="col-m-3">
-    <p>
-      クリックしてファイルをアップロード
-    </p>
-    <%= form.file_field :image, id:"post-image" %>
-  </div>
-  <div class="col-m-3">
-    <%= form.submit "SEND" %>
-  </div>
-<% end %>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script language="JavaScript" type="text/JavaScript">
+      function countLength( text, field ) {
+        document.getElementById(field).innerHTML = text.length;
+      }
+    </script>
+  </head>
+
+  <% post.errors.full_messages.each do |message| %>
+    <%= message %>
+  <% end %>
+
+  <%= form_with(model: post, local: true) do |form| %>
+    <div class="col-m-3">
+      <%= form.text_field :title, placeholder: "title" %>
+    </div>
+    <div class="col-m-3">
+      <%= form.collection_select(:mood_id, Mood.all, :id, :name, {}, {class:"mood-select"}) %>
+      <%= form.collection_select(:weather_id, Weather.all, :id, :name, {}, {class:"weather-select"}) %>
+    </div>
+    <div class="col-m-3">
+      <%= form.text_area :text, placeholder: "text", rows: "10" %>
+      <p><span id="text-length">0</span>文字</p>
+
+      <%# <textarea cols="20" rows="5" onKeyUp="countLength(value, 'textlength2');"></textarea>
+      <p id="textlength2">0</p> %>
+    </div>
+    <div class="col-m-3">
+      <p>
+        クリックしてファイルをアップロード
+      </p>
+      <%= form.file_field :image, id:"post-image" %>
+    </div>
+    <div class="col-m-3">
+      <%= form.submit "SEND" %>
+    </div>
+  <% end %>
+<html>

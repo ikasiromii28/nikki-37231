@@ -22,11 +22,11 @@
       <%= form.collection_select(:weather_id, Weather.all, :id, :name, {}, {class:"weather-select"}) %>
     </div>
     <div class="col-m-3">
-      <%#= form.text_area :text, placeholder: "text", rows: "10" %>
-      <%# <p><span id="text-length">0</span>文字</p> %>
+      <%= form.text_area :text, placeholder: "text", rows: "10" %>
+      <p><span id="text-length">0</span>文字</p>
 
-      <textarea cols="20" rows="5" onKeyUp="countLength(value, 'textlength2');"></textarea>
-      <p id="textlength2">0</p>
+      <%# <textarea cols="20" rows="5" onKeyUp="countLength(value, 'textlength2');"></textarea>
+      <p id="textlength2">0</p> %>
     </div>
     <div class="col-m-3">
       <p>
